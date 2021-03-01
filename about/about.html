@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../home/home.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>About</title>
+</head>
+<style>
+    body {
+        font-family: 'Poppins', Helvetica, sans-serif;
+    }
+
+
+    p,
+    span,
+    h1,
+    h2,
+    button,
+    ::placeholder,
+    label {
+        font-family: 'Poppins', sans-serif;
+    }
+
+
+    p,
+    h1 {
+        color: #5c3da4
+    }
+
+    h1 {
+        margin-top: 8%;
+        margin-bottom: 4%;
+        display: block;
+        text-align: center;
+        font-size: 40px;
+    }
+
+
+    p {
+        border: 1px solid #5c3da4;
+        box-sizing: border-box;
+        border-radius: 0.475rem;
+        align-self: center;
+        padding: 3%;
+
+        opacity: 0;
+        transition: opacity 0.6s linear;
+    }
+
+
+    .show {
+        opacity: 1;
+    }
+
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+     button {
+        border: solid 1px #ff8800;
+        background-color: transparent;
+        outline: transparent;
+        border-radius: 0.475rem;
+        padding:0px 1rem;
+        color:#ff8800;
+        font-family: 'Poppins', sans-serif;
+     }
+     .button_outline:hover , .button_outline:active{
+        background-color: #ff8800;
+        color:white;
+        outline:none;
+}
+
+
+
+
+    @media screen and (min-width: 320px) and (max-width: 960px) {
+        .container {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<body>
+
+    <h1>About us </h1>
+    <div class="mx-auto">
+        <div class="lg:flex md:flex sm:flex lg:flex-row md:flex-col sm:flex-col justify-around">
+            
+            <div class="flex flex-col lg:w-1/2 md:w-full sm:w-full">
+                <button id="btn1" class="mb-4 rounded transition ease-linear duration-500 active:outline-none">Our vision</button>
+                <p id="p1">
+                    Create a Productive Network where Iraqis everywhere can dedicate part of their time and money to uplift
+                    and elevate the quality of life for all
+                    To create an effectual digital bridge to allow the exchange of knowledge, experience and heritage
+                    between Iraqis across the world to strengthen kinship, open new horizons, and enhance prosperity for all
+                </p>
+            </div>
+
+            <div class="w-1/2">
+                <img src="../vision.svg" alt="" class="w-80 h-80"/>
+                    </div>
+        </div>
+
+
+
+        <div class="lg:flex md:flex sm:flex lg:flex-row md:flex-col-reverse sm:flex-col-reverse justify-around">
+            <div class="w-1/2">
+                    <img src="../mission.svg" alt="" class="w-80 h-80"/>
+            </div>
+                <div class="flex flex-col lg:w-1/2 md:w-full sm:w-full">
+                    <button id="btn2" class="mb-4 rounded transition ease-linear duration-500 active:outline-none">Our mission</button>
+                        <p id="p2">
+                            Open-up a digital bridge across the world for Iraqis to strengthen kinship and share their experiences
+                            and knowledge
+                        </p>
+                    </div>
+                </div>
+    </div>
+    <script>
+        var btn1 = document.getElementById('btn1')
+        var p1 = document.getElementById('p1')
+
+        btn1.addEventListener('click', evt => {
+              p1.classList.toggle('show')
+        })
+
+
+        var btn2 = document.getElementById('btn2')
+        var p2 = document.getElementById('p2')
+
+        btn2.addEventListener('click', evt => {
+          p2.classList.toggle('show')
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {font-family: 'Poppins', Helvetica, sans-serif;}
+
+
+p, span, h1, h2, h3,::placeholder,label {
+font-family: 'Poppins', sans-serif;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 80%;
+  padding: 10px 18px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #5c3da4;
+  box-sizing: border-box;
+  border-radius: 0.475rem;
+ align-self: center;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: rgb(92, 61, 164);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.475rem;
+  padding:10px 1rem;
+  font-family: 'Poppins', sans-serif;
+  width:auto;
+  align-self: center;
+
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.button_outline {
+  border: solid 1px rgb(92, 61, 164);
+  background-color: transparent;
+  outline: transparent;
+  border-radius: 0.475rem;
+  padding:12px 1rem;
+  color:rgb(92, 61, 164);
+  font-family: 'Poppins', sans-serif;
+  width:auto;
+  align-self: center;
+}
+.button_outline:hover , .button_outline:active{
+    background-color: rgb(92, 61, 164);
+    color:white;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+
+.container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.container_ {
+  padding: 16px;
+
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+  border: none;
+  border-radius: 0.475rem;
+
+
+}
+
+.btnCon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin:3% 0%;
+}
+
+textarea {
+  margin:3% 0%;
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #5c3da4;
+  box-sizing: border-box;
+  border-radius: 0.475rem;
+  align-self: center;
+ 
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  /* border: 1px solid  rgb(92, 61, 164); */
+  width: 80%; /* Could be more or less, depending on screen size */
+  border: none;
+  border-radius: 0.475rem;
+  
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(165, 0, 0);
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+  button{
+    width: 100%;
+  }
+}
+
+.heading {
+  color:#5c3da4;
+  font-family: 'Poppins',sans-serif;
+ text-align: center;
+}
+
+
+#sub_heading {
+  top:0;
+  margin-bottom: 3%;
+  margin-top: -20px;
+  font-size: 12px;
+  color: #5c3da4;
+  text-align: center;
+  font-family: 'Poppins',sans-serif;
+
+}
+
+#con {
+  top:10%;
+  margin-bottom: 3%;
+  font-size: 15px;
+  color: #5c3da4;
+  text-align: center;
+  font-family: 'Poppins',sans-serif;
+
+}
+
+/* .basic_btn {
+  padding:0% 10%;
+  background-color: transparent;
+  border: solid 1px #5c3da4;
+  border-radius: 20%;
+  width:50%;
+  height:10%;
+} */
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #5c3da4;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  align-self:flex-start;
+  margin-left: 10%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #5c3da4;
+}
+
+
+.bus_label {
+  color: #5c3da4;
+  font-family: 'Poppins',sans-serif;
+  align-self:flex-start;
+  margin-left: 10%;
+  margin-top: 3%;
+}
+
+</style>
+</head>
+<body>
+
+  <!-- Options starts here  -->
+<div >
+<h2 class="heading">Sign up</h2>
+<p id="sub_heading">sign up as </p>
+
+<div style="flex-direction: column; display: flex; align-items: center;">
+<button onclick="document.getElementById('id01').style.display='block'"  style="width: 50%; margin-bottom: 2%;" class="button_outline">Individual</button>
+<button onclick="document.getElementById('id02').style.display='block'"  style="width:50%; margin-bottom: 2%;" class="button_outline ">Institution</button>
+</div>
+<p id="con">or continue as <a href="" style="color: #ff8800">visitor</a> </p>
+
+</div>
+
+<!-- The first pop up window starts here  -->
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="container">
+      <label for="uname"></label>
+      <input type="text" placeholder="your name" name="uname" required>
+      <label for="email"></label>
+      <input type="text" placeholder="your email" name="email" required>
+      
+      <label for="psw"></label>
+      <input type="password" placeholder="Enter password" name="psw" required>
+      
+     <p class="heading">Gender 
+      <label class="radio-inline">
+        <input type="radio" name="optradio">male
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="optradio">female
+      </label>
+</p>
+
+
+      <label for="phone"></label>
+      <input type="text" placeholder="your phone number" name="phonr" required>
+
+      <div class="btnCon">
+
+      <div class="dropdown">
+        <button class="button_outline">Are you a </button>
+        <div class="dropdown-content">
+          <a href="#">Student</a>
+          <a href="#"> Parent </a>
+          <a href="#">Instructor</a>
+          <a href="#">Volunteer</a>
+        </div>
+      </div>
+
+      <textarea type="text" placeholder="Tell us briefly why you want to join" name="textarea" ></textarea>
+
+        <button type="submit">Sign in</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+
+    </div>
+
+    <div class="container_" style="background-color:#f1f1f1">
+      <button  type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- the first pop up window starts here  -->
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+  
+    <div class="container">
+      <label for="uname"></label>
+      <input type="text" placeholder="your name" name="uname" required>
+     
+      <label for="email"></label>
+      <input type="text" placeholder="your email" name="email" required>
+      
+      <label for="psw"></label>
+      <input type="password" placeholder="enter password" name="psw" required>
+      
+
+      <label for="business_name"></label>
+      <input type="text" placeholder="business or institution name" name="business_name" required>
+
+      <label for="phone"></label>
+      <input type="text" placeholder="your phone number" name="phonr" required>
+     
+      <label for="licence" class="bus_label">Business licence
+      <input type="file" placeholder="business licence" name="phonr" required>
+    </label>
+
+        <button type="submit">Sign up</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+
+    
+
+    <div class="container_" style="background-color:#f1f1f1">
+      <button  type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Get the modal
+var modal_2 = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal_2) {
+        modal_2.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
