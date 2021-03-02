@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="./home.css" rel="stylesheet"/>
     <title>Home</title>
 </head>
@@ -25,10 +26,11 @@
         </div>
 
 
+
         <div class="nav-header">
-          <div class="nav-title sign_up_container">
-             <img src="../Group_nav.svg" id="Sign_up" class="lg:w-full lg:h-full md:w-1/2 md:h-1/2 sm:w-1/4 sm:h-1/4"/>
-              <button class="btn_sign_up">
+          <div class="sign_up_container">
+             <img src="../Group_nav.svg"  class="lg:w-full lg:h-full md:w-60 md:h-60 sm:w-24 sm:h-24"/>
+              <button class=" btn text-white font-bold py-2 px-4 rounded btn_sign_up">
                 Sign up
               </button>
           </div>
@@ -43,7 +45,32 @@
             <span></span>
           </label>
         </div> 
-  
+      </div>
+
+
+      <div class="lg:flex md:flex sm:flex lg:flex-row md:flex-col sm:flex-col">
+        
+          <div class="mt-56 mx-8 w-1/2 b-16 p-6">
+              <h1 class="text-5xl text-bold">Tanweer</h1>
+              <h5 class="text-xl ml-1 mb-6">
+                Education in an ever lasting treasure 
+              </h5>
+              <div class="flex button_outline w-48 h-10 justify-between">
+                <button >
+                  Discover
+                </button>
+               <span class="mt-2">
+                <i class="fa fa-arrow-right " ></i> 
+               </span>                                  
+
+              </div>
+             
+          </div>
+          <div class=" w-1/2 mx-6 mt-24">
+            <img src="../mission.svg" alt="" class="lg:w-full lg:h-full md:w-64 md:h-64 sm:w-32 sm:h-32"/>
+          </div>
+
+
       </div>
 
 </body>
